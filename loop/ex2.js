@@ -5,13 +5,15 @@ function BinarySearch(d, find, left, right) {
     if (left > right) {
         return -1
     }
+    //ทำการเพิ่ม Math.floor(); เพื่อให้ค่าที่ / 2 ไม่มีจุดทศนิยม
+    //
+    let mid = Math.floor((left + right) / 2);
+    //  check datatype
+    if (find === d[mid]) {
+        return mid;
+    }
 
-    var mid = (left + right) / 2
-
-    if (find == d[mid]) {
-        return mid
-
-    } if (find < d[mid]) {
+    if (find < d[mid]) {
         return BinarySearch(d, find, left, mid - 1)
     } else {
         return BinarySearch(d, find, mid + 1, right)
@@ -19,8 +21,9 @@ function BinarySearch(d, find, left, right) {
 }
 
 
-// Error มันบอกว่า index -1 ไม่ได้ประกาศเอาใว้ มันเกิดขึ้นจา่กอะไรช่วยแก้หน่อย
-var find = 5
-const d = [1, 2, 3, 4, 5, 6, 7]
-result = BinarySearch(d, find, 0, d.length)
-console.log(`I want search : Get ${d[result]} index ${result} = ${d[result]}`)
+// Error มันบอกว่า index -1 ไม่ได้ประกาศเอาใว้ มันเกิดขึ้นจากอะไรช่วยแก้หน่อย
+const find = 5;
+const d = [1, 2, 3, 4, 5, 6, 7];
+//add varible const
+const result = BinarySearch(d, find, 0, d.length);
+console.log(`I want search : Get ${find} index ${result} = ${d[result]}`);
