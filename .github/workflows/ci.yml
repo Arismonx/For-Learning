@@ -1,0 +1,26 @@
+name: Run All JS Files
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-bugs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run all JS files
+        run: |
+          echo "=== Start check JavaScript ==
+          find . -name "*.js" -not -path "*/node_modules/*" | while read file; do
+            echo "----------------------------------------"
+            echo "running: $file"
+            node "$file"
+          done
+          
+          echo "----------------------------------------"
+          echo "=== Check all file ==="
