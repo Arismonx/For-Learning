@@ -6,7 +6,6 @@ function BinarySearch(d, find, left, right) {
         return -1
     }
     //ทำการเพิ่ม Math.floor(); เพื่อให้ค่าที่ / 2 ไม่มีจุดทศนิยม
-    //
     let mid = Math.floor((left + right) / 2);
     //  check datatype
     if (find === d[mid]) {
@@ -26,4 +25,4 @@ const find = 5;
 const d = [1, 2, 3, 4, 5, 6, 7];
 //add varible const
 const result = BinarySearch(d, find, 0, d.length);
-console.log(`I want search : Get ${find} index ${result} = ${d[result]}`);
+console.log(`I want search : Get ${d[result]} index ${result} = ${d[result]}`);
