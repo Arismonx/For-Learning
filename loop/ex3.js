@@ -3,11 +3,15 @@
 
 // เขียน function รวมค่าจาก arr แล้ว return ผลรวมคำตอบ
 // เขียนโค้ดในแค่ function นี้เท่านั้น
-function sum_list(arr){
-    
+function sum_list(arr) {
+    let result = 0;
+    for (const num of arr) {
+        result += num;
+    }
+    return result;
 }
 
-let arr = [1,2,3,4,5]
+let arr = [1, 2, 3, 4, 5];
 
-let result = sum_list(arr)
-console.log(`Result = ${result}`) // คาดหวังว่าให้ result = 15
+let result = sum_list(arr);
+console.log(`Result = ${result}`); // คาดหวังว่าให้ result = 15
